@@ -2,7 +2,7 @@
   "name": "@tmbr/bundler",
   "type": "module",
   "version": "1.12.2",
-  "repository": "github:TMBR/tmbr-bundler",
+  "repository": "github:nikrowell/tmbr-bundler",
   "bin": {
     "bundler": "cli.js",
     "tmbr-bundler": "cli.js"
