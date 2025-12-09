@@ -1,7 +1,7 @@
 {
   "name": "@tmbr/bundler",
   "type": "module",
-  "version": "1.12.3",
+  "version": "1.12.4",
   "repository": "github:nikrowell/tmbr-bundler",
   "bin": {
     "bundler": "cli.js",
