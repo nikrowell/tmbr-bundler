@@ -7,11 +7,14 @@
     "bundler": "cli.js",
     "tmbr-bundler": "cli.js"
   },
+  "files": [
+    "cli.js"
+  ],
   "dependencies": {
     "browser-sync": "^3.0.4",
     "chalk": "^5.6.2",
-    "esbuild": "^0.27.1",
-    "esbuild-sass-plugin": "^3.3.1",
-    "sass": "^1.95.0"
+    "esbuild": "^0.27.2",
+    "esbuild-sass-plugin": "^3.6.0",
+    "sass": "^1.97.3"
   }
 }

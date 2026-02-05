@@ -145,7 +145,7 @@ async function main() {
   });
 }
 
-if (fs.existsSync(process.argv[3])) {
+if (process.argv[3] && fs.existsSync(process.argv[3])) {
 
   function extend(options, config) {
     if (typeof config === 'undefined') return;
