@@ -16,7 +16,7 @@ const command = process.argv[2];
 
 if (!['build', 'watch'].includes(command)) {
   console.log(`Invalid command: ${chalk.red(command)}\n`);
-  process.exit();
+  process.exit(1);
 }
 
 const logger = (options = {}) => ({
@@ -145,14 +145,21 @@ async function main() {
   });
 }
 
-if (process.argv[3] && fs.existsSync(process.argv[3])) {
+if (process.argv[3]) {
+
+  const file = process.argv[3];
+
+  if (!fs.existsSync(file)) {
+    console.log(`Config file not found: ${chalk.red(file)}\n`);
+    process.exit(1);
+  }
 
   function extend(options, config) {
     if (typeof config === 'undefined') return;
     Object.assign(options, typeof config === 'function' ? config(options) : config);
   }
 
-  import(`${cwd}/${process.argv[3]}`).then(settings => {
+  import(`${cwd}/${file}`).then(settings => {
     extend(watchOptions, settings.watch);
     extend(buildOptions, settings.build);
     extend(serveOptions, settings.serve);
